@@ -1,0 +1,88 @@
+header {
+  background-image: url(hero.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "oswald", sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: white;
+}
+
+p {
+  font-family: "Cutive Mono", monospace;
+  font-size: 25px;
+  color: white;
+}
+
+a {
+  font-size: 23px;
+  color: #fff;
+  font-family: "Cutive Mono";
+}
+
+a:hover {
+  font-size: 23px;
+  color: #9e7c66;
+  font-family: "Cutive Mono";
+}
+img {
+  max-width: 80px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 35px;
+  margin-right: 265px;
+  margin-left: 265px;
+  margin-bottom: 80px;
+}
+.footer {
+  color: #7a7a7a;
+  font-size: 22px;
+}
+
+.footer:hover {
+  color: black;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: left;
+  gap: 5px;
+}
+
+h2 {
+  font-family: "oswald", sans-serif;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
