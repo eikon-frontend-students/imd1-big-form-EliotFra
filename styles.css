@@ -30,13 +30,13 @@ p {
 }
 
 a {
-  font-size: 23px;
+  font-size: 14px;
   color: #fff;
   font-family: "Cutive Mono";
 }
 
 a:hover {
-  font-size: 23px;
+  font-size: 14px;
   color: #9e7c66;
   font-family: "Cutive Mono";
 }
@@ -85,4 +85,85 @@ h2 {
   font-family: "oswald", sans-serif;
   font-weight: 400;
   margin-bottom: 12px;
+}
+
+.background {
+  background-color: #3c3d33;
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-top: 168px;
+  margin-bottom: 98px;
+}
+
+#modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Boîte blanche centrée */
+#modal-boite {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 320px;
+  max-width: 90%;
+}
+
+button {
+  background-color: #9e7c66;
+  color: #3c3d33;
+  width: 170px;
+  height: 30px;
+
+  text-align: left;
+  font-size: 20px;
+  font-family: "Cutive Mono";
+
+  border-style: none;
+
+  text-align: center;
+}
+
+label {
+  font-family: "oswald", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #9e7c66;
+}
+input {
+  font-family: "Cutive Mono", monospace;
+  font-size: 24px;
+}
+.label {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  gap: 13px;
+}
+
+.div-checkbox {
+  display: flex;
+  flex-direction: row;
+  max-width: 500px;
+  gap: 20px;
+}
+.checkbox-text {
+  font-size: 14px;
+  color: #fff;
+  font-family: "Cutive Mono";
+  min-width: 450px;
+}
+
+.conditions-suivant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+form {
 }
