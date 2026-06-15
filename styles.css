@@ -1,19 +1,26 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 header {
   background-image: url(hero.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
   background-attachment: fixed;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-* {
-  margin: 0;
-  box-sizing: border-box;
+.logo {
+  width: 60px;
+  position: absolute;
+  top: 2%;
+  left: 2%;
 }
 
 h1 {
@@ -21,6 +28,12 @@ h1 {
   font-size: 48px;
   font-weight: 400;
   color: white;
+}
+
+h2 {
+  font-family: "oswald", sans-serif;
+  font-weight: 400;
+  margin-bottom: 12px;
 }
 
 p {
@@ -33,20 +46,11 @@ a {
   font-size: 14px;
   color: #fff;
   font-family: "Cutive Mono";
+  transition: color 0.3s ease;
 }
-
 a:hover {
-  font-size: 14px;
   color: #9e7c66;
-  font-family: "Cutive Mono";
 }
-img {
-  max-width: 80px;
-  position: absolute;
-  top: 5px;
-  left: 5px;
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -55,77 +59,28 @@ img {
   gap: 20px;
 }
 
-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 35px;
-  margin-right: 265px;
-  margin-left: 265px;
-  margin-bottom: 80px;
-}
-.footer {
-  color: #7a7a7a;
-  font-size: 22px;
-}
-
-.footer:hover {
-  color: black;
-}
-
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: top;
-  align-items: left;
-  gap: 5px;
-}
-
-h2 {
-  font-family: "oswald", sans-serif;
-  font-weight: 400;
-  margin-bottom: 12px;
-}
-
 .background {
   background-color: #3c3d33;
-  margin-left: 120px;
-  margin-right: 120px;
-  margin-top: 168px;
-  margin-bottom: 98px;
-}
-
-#modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  align-items: center;
+  margin: 168px auto 98px auto;
+  padding: 0 120px;
+  display: flex;
   justify-content: center;
 }
 
-/* Boîte blanche centrée */
-#modal-boite {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  width: 320px;
-  max-width: 90%;
+/* Grille 2 colonnes pour le formulaire */
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 800px;
 }
 
-button {
-  background-color: #9e7c66;
-  color: #3c3d33;
-  width: 170px;
-  height: 30px;
-
-  text-align: left;
-  font-size: 20px;
-  font-family: "Cutive Mono";
-
-  border-style: none;
-
-  text-align: center;
+/* Conteneur pour chaque champ (label + input) */
+.label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 13px;
 }
 
 label {
@@ -134,28 +89,47 @@ label {
   font-weight: 400;
   color: #9e7c66;
 }
+
 input {
   font-family: "Cutive Mono", monospace;
   font-size: 24px;
+  border: solid 1px black;
+  background-color: #3c3d33;
+  padding: 8px;
 }
-.label {
-  display: flex;
-  flex-direction: column;
-  max-width: 320px;
-  gap: 13px;
+
+input::placeholder {
+  color: #9e7c66;
 }
 
 .div-checkbox {
   display: flex;
   flex-direction: row;
-  max-width: 500px;
   gap: 20px;
+  align-items: flex-start;
 }
+
 .checkbox-text {
   font-size: 14px;
   color: #fff;
   font-family: "Cutive Mono";
-  min-width: 450px;
+}
+
+button {
+  background-color: #9e7c66;
+  color: #3c3d33;
+  width: 170px;
+  height: 30px;
+  font-size: 20px;
+  font-family: "Cutive Mono";
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #8b6f5a;
 }
 
 .conditions-suivant {
@@ -163,7 +137,103 @@ input {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  grid-column: 1 / -1;
 }
 
-form {
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 35px 265px 80px 265px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer {
+  color: #7a7a7a;
+  font-size: 22px;
+  transition: color 0.3s ease;
+}
+
+.footer:hover {
+  color: black;
+}
+
+/* Overlay sombre couvrant toute la page - Caché par défaut */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Boîte de contenu du pop-up */
+.popup-content {
+  background-color: #3b3d36;
+  width: 90%;
+  max-width: 500px;
+  padding: 40px 30px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Titre du pop-up */
+.popup-title {
+  color: #a38570;
+  font-family: "oswald", sans-serif;
+  font-weight: normal;
+  font-size: 36px;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Texte descriptif du pop-up */
+.popup-text {
+  color: #a38570;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 35px;
+  word-spacing: 2px;
+}
+
+/* Conteneur des boutons du pop-up */
+.popup-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Boutons du pop-up */
+.btn-redirect {
+  text-decoration: none;
+  font-family: "Cutive Mono", monospace;
+  padding: 12px 40px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #a38570;
+  color: #3b3d36;
+  font-weight: bold;
+  min-width: 180px;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #a38570;
+}
+
+.btn-secondary:hover {
+  color: #8b6f5a;
 }

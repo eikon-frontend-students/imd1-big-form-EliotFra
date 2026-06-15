@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body class="background">
+    <img class="logo" src="../anuel.png" alt="logo anuel" />
     <form>
       <div class="label">
         <label for="nom">Nom</label>
@@ -27,7 +28,13 @@
       </div>
       <div class="label">
         <label for="prénom">Prénom</label>
-        <input id="nom" type="text" required placeholder="Jean" />
+        <input
+          id="prénom"
+          type="text"
+          name="prenom"
+          required
+          placeholder="Jean"
+        />
       </div>
       <div class="label">
         <label for="email">Adresse e-mail</label>
@@ -42,11 +49,21 @@
       <div class="label">
         <label for="phone">Téléphone</label>
         <input
-          id="tel"
+          id="phone"
           name="tel"
           type="tel"
           required
           placeholder="079 123 45 67"
+        />
+      </div>
+      <div class="label">
+        <label for="adresse">Adresse</label>
+        <input
+          id="tadresse"
+          name="adresse"
+          type="text"
+          required
+          placeholder="Rte 1, 1700 Fribourg, CH"
         />
       </div>
       <div class="conditions-suivant">
@@ -61,9 +78,26 @@
             Accepter les conditions d’<a>utilisation générales. </a>
           </label>
         </div>
-        <button id="btn-open">Suivant</button>
-      </div>
+        <button id="openPopupBtn" class="trigger-btn">Next</button>
 
+        <div id="popupOverlay" class="popup-overlay">
+          <div class="popup-content">
+            <h1 class="popup-title">Une dernière chose ...</h1>
+
+            <p class="popup-text">
+              Salut, veux-tu t’inscrire à notre newsletter pour recevoir toutes
+              nos nouvelles offres ?
+            </p>
+
+            <div class="popup-buttons">
+              <a href="validate.html" class="btn-redirect btn-primary"
+                >Oui, continuer</a
+              >
+              <a href="validate.html" class="btn-redirect btn-secondary"
+                >Non merci</a
+              >
+            </div>
+          </div>
         </div>
       </div>
     </form>

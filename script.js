@@ -1,20 +1,22 @@
-const modal = document.getElementById("modal");
-const btnOuvrir = document.getElementById("btn-open");
-const btnFermer = document.getElementById("btn-fermer");
+const openPopupBtn = document.getElementById("openPopupBtn");
+const popupOverlay = document.getElementById("popupOverlay");
+const redirectButtons = document.querySelectorAll(".btn-redirect");
 
-// Ouvrir la modale
-btnOuvrir.addEventListener("click", function () {
-  modal.style.display = "flex";
+const pageInterneDestination = "validate.html";
+
+openPopupBtn.addEventListener("click", () => {
+  popupOverlay.style.display = "flex";
 });
 
-// Fermer avec le bouton
-btnFermer.addEventListener("click", function () {
-  modal.style.display = "none";
+redirectButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.location.href = pageInterneDestination;
+  });
 });
 
-// Fermer en cliquant sur le fond sombre
-modal.addEventListener("click", function (e) {
-  if (e.target === modal) {
-    modal.style.display = "none";
+popupOverlay.addEventListener("click", (event) => {
+  if (event.target === popupOverlay) {
+    popupOverlay.style.display = "none";
   }
 });
